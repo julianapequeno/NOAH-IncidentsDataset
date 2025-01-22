@@ -1,5 +1,5 @@
-PIPELINE_PATH = "./IncidentsDataset/Model/incidents_model.joblib"
-GH_PATH = "."
+PIPELINE_PATH = "/home/runner/work/NOAH-IncidentsDataset/NOAH-IncidentsDataset/IncidentsDataset/Model/incidents_model.joblib"
+GH_PATH = "/home/runner/work/NOAH-IncidentsDataset/NOAH-IncidentsDataset"
 
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline

@@ -1,5 +1,7 @@
 """models.py
 """
+REF_REL = "/home/runner/work/NOAH-IncidentsDataset/NOAH-IncidentsDataset/"
+
 import torch
 import torch.nn as nn
 import torch.nn.parallel
@@ -168,9 +170,9 @@ def update_incidents_model_with_checkpoint(incidents_model, args):
         args.checkpoint_path, "incident{}.pth.tar".format(best_str))
 
     #FOR THE ORIGINALs PRE TRAINED ((JU HERE))
-    trunk_resume = "/home/runner/work/CI-CD-IncidentsModel/CI-CD-IncidentsModel/IncidentsDataset/pretrained_weights/eccv_final_model_trunk.pth.tar"
-    place_resume = "/home/runner/work/CI-CD-IncidentsModel/CI-CD-IncidentsModel/IncidentsDataset/pretrained_weights/eccv_final_model_place.pth.tar"
-    incident_resume = "/home/runner/work/CI-CD-IncidentsModel/CI-CD-IncidentsModel/IncidentsDataset/pretrained_weights/eccv_final_model_incident.pth.tar"
+    trunk_resume = f"{REF_REL}/IncidentsDataset/pretrained_weights/eccv_final_model_trunk.pth.tar"
+    place_resume = f"{REF_REL}/IncidentsDataset/pretrained_weights/eccv_final_model_place.pth.tar"
+    incident_resume = f"{REF_REL}/IncidentsDataset/pretrained_weights/eccv_final_model_incident.pth.tar"
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     for (path, net) in [(trunk_resume, trunk_model), (place_resume, place_layer), (incident_resume, incident_layer)]:

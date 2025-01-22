@@ -12,13 +12,13 @@ install:
 	$(HOME)/miniconda/bin/conda run -n incidents pip install --upgrade pip && \
 	$(HOME)/miniconda/bin/conda run -n incidents pip install googledrivedownloader==0.4 && \
 	echo "Current directory: $(shell pwd)" && \
-	$(HOME)/miniconda/bin/conda run -n incidents pip install -r /IncidentsDataset/requirements.txt
+	$(HOME)/miniconda/bin/conda run -n incidents pip install -r /home/runner/work/NOAH-IncidentsDataset/NOAH-IncidentsDataset/IncidentsDataset/requirements.txt
 	$(HOME)/miniconda/bin/conda run -n incidents pip install scikit-learn  torch opencv-python matplotlib tqdm ipython-genutils gradio
 
 train:
 	echo "Current directory: $(shell pwd)" && \
-	$(HOME)/miniconda/bin/conda run -n incidents python ./IncidentsDataset/run_download_weights.py && \
-	$(HOME)/miniconda/bin/conda run -n incidents python ./train.py
+	$(HOME)/miniconda/bin/conda run -n incidents python /home/runner/work/NOAH-IncidentsDataset/NOAH-IncidentsDataset/IncidentsDataset/run_download_weights.py && \
+	$(HOME)/miniconda/bin/conda run -n incidents python /home/runner/work/NOAH-IncidentsDataset/NOAH-IncidentsDataset/train.py
 
 eval:
 	echo "## Model Metrics" > report.md && \
