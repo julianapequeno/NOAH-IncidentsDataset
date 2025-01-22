@@ -117,8 +117,8 @@ pipeline = Pipeline([
     ("run_inference", RunInference())
 ])
 
-if not os.path.exists(f"{GH_PATH}/IncidentsDataset/Model/"):
-  os.mkdir(f"{GH_PATH}/IncidentsDataset/Model/")
+#if not os.path.exists(f"{GH_PATH}/IncidentsDataset/Model/"):
+ # os.mkdir(f"{GH_PATH}/IncidentsDataset/Model")
 
 # Salvar o pipeline
 MODEL_PATH = f"{GH_PATH}/IncidentsDataset/Model/incidents_model.joblib"
