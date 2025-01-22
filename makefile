@@ -11,7 +11,8 @@ install:
 	$(HOME)/miniconda/bin/conda create -n incidents python=3.8.2 -y && \
 	$(HOME)/miniconda/bin/conda run -n incidents pip install --upgrade pip && \
 	$(HOME)/miniconda/bin/conda run -n incidents pip install googledrivedownloader==0.4 && \
-	$(HOME)/miniconda/bin/conda run -n incidents pip install -r IncidentsDataset/requirements.txt
+	echo "Current directory: $(shell pwd)" && \
+	$(HOME)/miniconda/bin/conda run -n incidents pip install -r /IncidentsDataset/requirements.txt
 	$(HOME)/miniconda/bin/conda run -n incidents pip install scikit-learn  torch opencv-python matplotlib tqdm ipython-genutils gradio
 
 train:
