@@ -12,17 +12,18 @@ install:
 	$(HOME)/miniconda/bin/conda run -n incidents pip install --upgrade pip && \
 	$(HOME)/miniconda/bin/conda run -n incidents pip install googledrivedownloader==0.4 && \
 	echo "Current directory: $(shell pwd)" && \
-	$(HOME)/miniconda/bin/conda run -n incidents pip install -r /home/runner/work/NOAH-IncidentsDataset/NOAH-IncidentsDataset/IncidentsDataset/requirements.txt
+	$(HOME)/miniconda/bin/conda run -n incidents pip install -r $(shell pwd)/IncidentsDataset/requirements.txt
 	$(HOME)/miniconda/bin/conda run -n incidents pip install scikit-learn  torch opencv-python matplotlib tqdm ipython-genutils gradio
 
 train:
 	echo "Current directory: $(shell pwd)" && \
-	$(HOME)/miniconda/bin/conda run -n incidents python /home/runner/work/NOAH-IncidentsDataset/NOAH-IncidentsDataset/IncidentsDataset/run_download_weights.py && \
-	$(HOME)/miniconda/bin/conda run -n incidents python /home/runner/work/NOAH-IncidentsDataset/NOAH-IncidentsDataset/train.py
+	$(HOME)/miniconda/bin/conda run -n incidents python $(shell pwd)/IncidentsDataset/run_download_weights.py && \
+	$(HOME)/miniconda/bin/conda run -n incidents python $(shell pwd)/train.py
 
 eval:
+	echo "$(shell pwd)" && \
 	echo "## Model Metrics" > report.md && \
-	cat /Results/metrics.txt >> report.md && \
+	cat $(shell pwd)/Results/metrics.txt >> report.md && \
 	cml comment create report.md
 
 update-branch:
@@ -40,9 +41,9 @@ hf-login:
 
 
 push-hub:
-	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier ./IncidentsDataset /IncidentsDataset --repo-type=space --commit-message="Sync IncidentsDataset files"
-	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier ./App --repo-type=space --commit-message="Sync App files"
-	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier ./IncidentsDataset/Model /Model --repo-type=space --commit-message="Sync Model"
-	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier ./Results /Metrics --repo-type=space --commit-message="Sync Model"
+	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/IncidentsDataset /IncidentsDataset --repo-type=space --commit-message="Sync IncidentsDataset files"
+	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/App --repo-type=space --commit-message="Sync App files"
+	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/IncidentsDataset/Model /Model --repo-type=space --commit-message="Sync Model"
+	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/Results /Metrics --repo-type=space --commit-message="Sync Model"
 
 deploy: hf-login push-hub
