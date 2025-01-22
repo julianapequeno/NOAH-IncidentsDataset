@@ -1,0 +1,8 @@
+scikit-learn
+skops
+torch 
+opencv-python 
+matplotlib 
+tqdm 
+ipython-genutils 
+gradio
