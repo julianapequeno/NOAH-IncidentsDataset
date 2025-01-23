@@ -1,3 +1,4 @@
+GH_PATH = "."
 import os
 from tqdm import tqdm
 from google_drive_downloader import GoogleDriveDownloader as gdd
@@ -19,5 +20,5 @@ file_id_to_filename = {
 for file_id, filename in tqdm(file_id_to_filename.items()):
     gdd.download_file_from_google_drive(
         file_id=file_id,
-        dest_path=os.path.join("IncidentsDataset/pretrained_weights", filename),
+        dest_path=os.path.join("{GH_PATH}/IncidentsDataset/pretrained_weights", filename),
     )

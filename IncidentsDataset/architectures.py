@@ -1,6 +1,6 @@
 """models.py
 """
-REF_REL = "/home/runner/work/NOAH-IncidentsDataset/NOAH-IncidentsDataset/"
+REF_REL = "."
 
 import torch
 import torch.nn as nn
