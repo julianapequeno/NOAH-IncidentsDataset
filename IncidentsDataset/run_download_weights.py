@@ -20,5 +20,5 @@ file_id_to_filename = {
 for file_id, filename in tqdm(file_id_to_filename.items()):
     gdd.download_file_from_google_drive(
         file_id=file_id,
-        dest_path=os.path.join("{GH_PATH}/IncidentsDataset/pretrained_weights", filename),
-    )
+        dest_path=os.path.join(f"{GH_PATH}/IncidentsDataset/pretrained_weights", filename),
+    )s
