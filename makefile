@@ -12,7 +12,7 @@ install:
 	$(HOME)/miniconda/bin/conda run -n incidents pip install googledrivedownloader==0.4 && \
 	echo "Current directory: $(shell pwd)" && \
 	$(HOME)/miniconda/bin/conda run -n incidents pip install -r $(shell pwd)/IncidentsDataset/requirements.txt
-	$(HOME)/miniconda/bin/conda run -n incidents pip install scikit-learn  torch opencv-python matplotlib tqdm ipython-genutils gradio
+	$(HOME)/miniconda/bin/conda run -n incidents pip install scikit-learn  torch opencv-python matplotlib tqdm ipython-genutils gradio torchvision
 
 train:
 	echo "Current directory: $(shell pwd)" && \
