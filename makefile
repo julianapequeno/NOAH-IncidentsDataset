@@ -28,7 +28,7 @@ eval:
 update-branch:
 	git config --global user.name $(USER_NAME)
 	git config --global user.email $(USER_EMAIL)
-	git add .  # Adiciona os arquivos não rsastreados
+	git add .  # Adiciona os arquivos não rastreados
 	git commit -am "feat: Automatic Update with untracked files"
 	git push --force origin HEAD:main
 

@@ -1,7 +1,9 @@
-GH_PATH = "."
+
 import os
 from tqdm import tqdm
 from google_drive_downloader import GoogleDriveDownloader as gdd
+
+GH_PATH = os.getcwd()
 
 file_id_to_filename = {
     # 
