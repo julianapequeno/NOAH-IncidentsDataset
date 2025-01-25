@@ -1,0 +1,9 @@
+googledrivedownloader==0.4
+gradio
+scikit-learn
+torch
+opencv-python
+matplotlib
+tqdm
+ipython-genutils
+torchvision
