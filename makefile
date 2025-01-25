@@ -42,7 +42,7 @@ hf-login:
 
 
 push-hub:
-	chmod +x setup.sh
+	chmod +x $(shell pwd)/setup.sh
 	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/IncidentsDataset /IncidentsDataset --repo-type=space --commit-message="Sync IncidentsDataset files"
 	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/App --repo-type=space --commit-message="Sync App files"
 	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/IncidentsDataset/Model /Model --repo-type=space --commit-message="Sync Model"
