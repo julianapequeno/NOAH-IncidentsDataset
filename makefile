@@ -26,6 +26,7 @@ eval:
 	cml comment create report.md
 
 update-branch:
+	cd ./ && \
 	git config --global user.name $(USER_NAME)
 	git config --global user.email $(USER_EMAIL)
 	git status
