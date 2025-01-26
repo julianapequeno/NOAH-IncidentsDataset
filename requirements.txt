@@ -7,3 +7,8 @@ matplotlib
 tqdm
 ipython-genutils
 torchvision
+tensorboardX==2.1
+ipykernel==5.3.4
+ConfigArgParse==1.2.3
+requests==2.24.0
+p_tqdm==1.3.3
