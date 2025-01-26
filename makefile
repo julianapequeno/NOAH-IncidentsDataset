@@ -47,6 +47,6 @@ push-hub:
 	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/IncidentsDataset/Model /Model --repo-type=space --commit-message="Sync Model"
 	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/Results /Metrics --repo-type=space --commit-message="Sync Model"
 	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/train.py --repo-type=space --commit-message="Sync train.py"
-	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/requirements.py --repo-type=space --commit-message="Sync requirements.py"
+	huggingface-cli upload julianasky/NOAH-IncidentsDatasetClassifier $(shell pwd)/requirements.txt --repo-type=space --commit-message="Sync requirements.py"
 
 deploy: hf-login push-hub
